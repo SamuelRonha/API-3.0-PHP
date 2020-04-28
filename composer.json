@@ -4,7 +4,7 @@
       "Cielo": "src"
     }
   },
-  "name": "developercielo/api-3.0-php",
+  "name": "samuelronha/api-3.0-php",
   "description": "Integração com a API 3.0 da Cielo",
   "license": "MIT",
   "type": "library",
