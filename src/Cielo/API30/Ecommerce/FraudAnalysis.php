@@ -20,6 +20,11 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
     /** @var string $provider */
     private $provider;
 
+    /**
+     * @var string $id
+     */
+    private $id;
+
     /** @var string $sequence */
     private $sequence;
 
@@ -100,6 +105,16 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
     private $statusDescription;
 
     /**
+     * @var string $fraudAnalysisReasonCode
+     */
+    private $fraudAnalysisReasonCode;
+
+    /**
+     * @var string $isRetryTransaction
+     */
+    private $isRetryTransaction;
+
+    /**
      * Fraud Analysis constructor.
      *
      * @param null
@@ -140,8 +155,13 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
         $this->ipRoutingMethod      = isset($data->IpRoutingMethod) ? $data->IpRoutingMethod : null;
         $this->scoreModelUsed       = isset($data->ScoreModelUsed) ? $data->ScoreModelUsed : null;
         $this->casePriority         = isset($data->CasePriority) ? $data->CasePriority : null;
-        $this->status         =       isset($data->status) ? $data->status : null;
-        $this->statusDescription         = isset($data->statusDescription) ? $data->statusDescription : null;
+        $this->status         =       isset($data->Status) ? $data->Status : null;
+        $this->statusDescription         = isset($data->StatusDescription) ? $data->StatusDescription : null;
+
+        $this->isRetryTransaction         = isset($data->IsRetryTransaction) ? $data->IsRetryTransaction : null;
+        $this->fraudAnalysisReasonCode         = isset($data->FraudAnalysisReasonCode) ? $data->FraudAnalysisReasonCode : null;
+        $this->id         = isset($data->Id) ? $data->Id : null;
+
 
         if (isset($data->Browser)) {
             $this->browser = new Browser();
@@ -692,6 +712,60 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
     public function setStatusDescription($statusDescription)
     {
         $this->statusDescription = $statusDescription;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     * @return FraudAnalysis
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFraudAnalysisReasonCode()
+    {
+        return $this->fraudAnalysisReasonCode;
+    }
+
+    /**
+     * @param string $fraudAnalysisReasonCode
+     * @return FraudAnalysis
+     */
+    public function setFraudAnalysisReasonCode($fraudAnalysisReasonCode)
+    {
+        $this->fraudAnalysisReasonCode = $fraudAnalysisReasonCode;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIsRetryTransaction()
+    {
+        return $this->isRetryTransaction;
+    }
+
+    /**
+     * @param string $isRetryTransaction
+     * @return FraudAnalysis
+     */
+    public function setIsRetryTransaction($isRetryTransaction)
+    {
+        $this->isRetryTransaction = $isRetryTransaction;
         return $this;
     }
 }
