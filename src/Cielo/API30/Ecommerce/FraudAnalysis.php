@@ -90,6 +90,16 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
     private $casePriority;
 
     /**
+     * @var string $status
+     */
+    private $status;
+
+    /**
+     * @var string $statusDescription
+     */
+    private $statusDescription;
+
+    /**
      * Fraud Analysis constructor.
      *
      * @param null
@@ -130,7 +140,9 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
         $this->ipRoutingMethod      = isset($data->IpRoutingMethod) ? $data->IpRoutingMethod : null;
         $this->scoreModelUsed       = isset($data->ScoreModelUsed) ? $data->ScoreModelUsed : null;
         $this->casePriority         = isset($data->CasePriority) ? $data->CasePriority : null;
-        
+        $this->status         =       isset($data->status) ? $data->status : null;
+        $this->statusDescription         = isset($data->statusDescription) ? $data->statusDescription : null;
+
         if (isset($data->Browser)) {
             $this->browser = new Browser();
             $this->browser->populate($data->Browser);
@@ -143,7 +155,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
         if (isset($data->MerchantDefinedFields)) {
             foreach($data->MerchantDefinedFields as $merchantDefinedField){
-            
+
                 $merchantDefinedFieldsInstance = new MerchantDefinedFields();
                 $merchantDefinedFieldsInstance->populate($merchantDefinedField);
 
@@ -644,6 +656,42 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
     {
         $this->casePriority = $casePriority;
 
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     * @return FraudAnalysis
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatusDescription()
+    {
+        return $this->statusDescription;
+    }
+
+    /**
+     * @param string $statusDescription
+     * @return FraudAnalysis
+     */
+    public function setStatusDescription($statusDescription)
+    {
+        $this->statusDescription = $statusDescription;
         return $this;
     }
 }
