@@ -4,6 +4,7 @@ namespace Cielo\API30\Ecommerce;
 
 use Cielo\API30\Ecommerce\Request\CreateSaleRequest;
 use Cielo\API30\Ecommerce\Request\QueryRecurrentPaymentRequest;
+use Cielo\API30\Ecommerce\Request\QuerySaleByMerchantOrderIdRequest;
 use Cielo\API30\Ecommerce\Request\QuerySaleRequest;
 use Cielo\API30\Ecommerce\Request\TokenizeCardRequest;
 use Cielo\API30\Ecommerce\Request\UpdateSaleRequest;
@@ -85,6 +86,27 @@ class CieloEcommerce
         $querySaleRequest = new QuerySaleRequest($this->merchant, $this->environment, $this->logger);
 
         return $querySaleRequest->execute($paymentId);
+    }
+
+    /**
+     * Query a Sale on Cielo by merchant order id
+     *
+     * @param mixed $merchantOrderId
+     *            The paymentId to be queried
+     *
+     * @return Sale The Sale with authorization, tid, etc. returned by Cielo.
+     *
+     * @throws \Cielo\API30\Ecommerce\Request\CieloRequestException if anything gets wrong.
+     *
+     * @see <a href=
+     *      "https://developercielo.github.io/Webservice-3.0/english.html#error-codes">Error
+     *      Codes</a>
+     */
+    public function getSaleByMerchantOrderId($merchantOrderId)
+    {
+        $querySaleByMerchantOrderIdRequest = new QuerySaleByMerchantOrderIdRequest($this->merchant, $this->environment, $this->logger);
+
+        return $querySaleByMerchantOrderIdRequest->execute($merchantOrderId);
     }
 
     /**
