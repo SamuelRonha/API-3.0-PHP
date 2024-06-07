@@ -118,22 +118,22 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * Fraud Analysis constructor.
      *
      * @param null
-    */
+     */
     public function __construct()
     {
     }
 
     /**
      * @return array
-    */
-    public function jsonSerialize()
+     */
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
 
     /**
      * @param \stdClass $data
-    */
+     */
     public function populate(\stdClass $data)
     {
 
@@ -174,12 +174,12 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
         }
 
         if (isset($data->MerchantDefinedFields)) {
-            foreach($data->MerchantDefinedFields as $merchantDefinedField){
+            foreach ($data->MerchantDefinedFields as $merchantDefinedField) {
 
                 $merchantDefinedFieldsInstance = new MerchantDefinedFields();
                 $merchantDefinedFieldsInstance->populate($merchantDefinedField);
 
-                $this->merchantDefinedFields [] = $merchantDefinedFieldsInstance;
+                $this->merchantDefinedFields[] = $merchantDefinedFieldsInstance;
             }
         }
 
@@ -201,7 +201,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getProvider()
     {
         return $this->provider;
@@ -211,7 +211,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $provider
      *
      * @return $this
-    */
+     */
     public function setProvider($provider)
     {
         $this->provider = $provider;
@@ -221,7 +221,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getSequence()
     {
         return $this->sequence;
@@ -231,7 +231,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $sequence
      *
      * @return $this
-    */
+     */
     public function setSequence($sequence)
     {
         $this->sequence = $sequence;
@@ -241,7 +241,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getSequenceCriteria()
     {
         return $this->sequenceCriteria;
@@ -251,7 +251,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $sequenceCriteria
      *
      * @return $this
-    */
+     */
     public function setSequenceCriteria($sequenceCriteria)
     {
         $this->sequenceCriteria = $sequenceCriteria;
@@ -261,7 +261,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getCaptureOnLowRisk()
     {
         return $this->captureOnLowRisk;
@@ -271,7 +271,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $captureOnLowRisk
      *
      * @return $this
-    */
+     */
     public function setCaptureOnLowRisk($captureOnLowRisk)
     {
         $this->captureOnLowRisk = $captureOnLowRisk;
@@ -281,7 +281,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getVoidOnHighRisk()
     {
         return $this->voidOnHighRisk;
@@ -291,7 +291,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $voidOnHighRisk
      *
      * @return $this
-    */
+     */
     public function setVoidOnHighRisk($voidOnHighRisk)
     {
         $this->voidOnHighRisk = $voidOnHighRisk;
@@ -301,7 +301,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getTotalOrderAmount()
     {
         return $this->totalOrderAmount;
@@ -311,7 +311,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $totalOrderAmount
      *
      * @return $this
-    */
+     */
     public function setTotalOrderAmount($totalOrderAmount)
     {
         $this->totalOrderAmount = $totalOrderAmount;
@@ -321,7 +321,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getFingerPrintId()
     {
         return $this->fingerPrintId;
@@ -331,7 +331,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $fingerPrintId
      *
      * @return $this
-    */
+     */
     public function setFingerPrintId($fingerPrintId)
     {
         $this->fingerPrintId = $fingerPrintId;
@@ -341,7 +341,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getBrowser()
     {
         return $this->browser;
@@ -351,7 +351,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $browser
      *
      * @return $this
-    */
+     */
     public function setBrowser($browser)
     {
         $this->browser = $browser;
@@ -361,7 +361,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getCart()
     {
         return $this->cart;
@@ -371,7 +371,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $cart
      *
      * @return $this
-    */
+     */
     public function setCart($cart)
     {
         $this->cart = $cart;
@@ -381,7 +381,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getMerchantDefinedFields()
     {
         return $this->merchantDefinedFields;
@@ -391,7 +391,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $merchantDefinedFields
      *
      * @return $this
-    */
+     */
     public function setMerchantDefinedFields($merchantDefinedFields)
     {
         $this->merchantDefinedFields = $merchantDefinedFields;
@@ -401,7 +401,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getShipping()
     {
         return $this->shipping;
@@ -411,7 +411,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $shipping
      *
      * @return $this
-    */
+     */
     public function setShipping($shipping)
     {
         $this->shipping = $shipping;
@@ -421,7 +421,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getTravel()
     {
         return $this->travel;
@@ -431,7 +431,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $travel
      *
      * @return $this
-    */
+     */
     public function setTravel($travel)
     {
         $this->travel = $travel;
@@ -441,7 +441,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getReplyData()
     {
         return $this->replyData;
@@ -451,7 +451,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $replyData
      *
      * @return $this
-    */
+     */
     public function setReplyData($replyData)
     {
         $this->replyData = $replyData;
@@ -461,7 +461,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getAddressInfoCode()
     {
         return $this->addressInfoCode;
@@ -471,7 +471,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $addressInfoCode
      *
      * @return $this
-    */
+     */
     public function setAddressInfoCode($addressInfoCode)
     {
         $this->addressInfoCode = $addressInfoCode;
@@ -481,7 +481,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getFactorCode()
     {
         return $this->factorCode;
@@ -491,7 +491,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $factorCode
      *
      * @return $this
-    */
+     */
     public function setFactorCode($factorCode)
     {
         $this->factorCode = $factorCode;
@@ -501,7 +501,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getScore()
     {
         return $this->score;
@@ -511,7 +511,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $score
      *
      * @return $this
-    */
+     */
     public function setScore($score)
     {
         $this->score = $score;
@@ -521,7 +521,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getBinCountry()
     {
         return $this->binCountry;
@@ -531,7 +531,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $binCountry
      *
      * @return $this
-    */
+     */
     public function setBinCountry($binCountry)
     {
         $this->binCountry = $binCountry;
@@ -541,7 +541,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getCardIssuer()
     {
         return $this->cardIssuer;
@@ -551,7 +551,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $cardIssuer
      *
      * @return $this
-    */
+     */
     public function setCardIssuer($cardIssuer)
     {
         $this->cardIssuer = $cardIssuer;
@@ -561,7 +561,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getCardScheme()
     {
         return $this->cardScheme;
@@ -571,7 +571,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $cardScheme
      *
      * @return $this
-    */
+     */
     public function setCardScheme($cardScheme)
     {
         $this->cardScheme = $cardScheme;
@@ -581,7 +581,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getHostSeverity()
     {
         return $this->hostSeverity;
@@ -591,7 +591,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $hostSeverity
      *
      * @return $this
-    */
+     */
     public function setHostSeverity($hostSeverity)
     {
         $this->hostSeverity = $hostSeverity;
@@ -601,7 +601,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getInternetInfoCode()
     {
         return $this->internetInfoCode;
@@ -611,7 +611,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $internetInfoCode
      *
      * @return $this
-    */
+     */
     public function setInternetInfoCode($internetInfoCode)
     {
         $this->internetInfoCode = $internetInfoCode;
@@ -621,7 +621,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getIpRoutingMethod()
     {
         return $this->ipRoutingMethod;
@@ -631,7 +631,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $ipRoutingMethod
      *
      * @return $this
-    */
+     */
     public function setIpRoutingMethod($ipRoutingMethod)
     {
         $this->ipRoutingMethod = $ipRoutingMethod;
@@ -641,7 +641,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getScoreModelUsed()
     {
         return $this->scoreModelUsed;
@@ -651,7 +651,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $scoreModelUsed
      *
      * @return $this
-    */
+     */
     public function setScoreModelUsed($scoreModelUsed)
     {
         $this->scoreModelUsed = $scoreModelUsed;
@@ -661,7 +661,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getCasePriority()
     {
         return $this->casePriority;
@@ -671,7 +671,7 @@ class FraudAnalysis implements \JsonSerializable, CieloSerializable
      * @param $casePriority
      *
      * @return $this
-    */
+     */
     public function setCasePriority($casePriority)
     {
         $this->casePriority = $casePriority;

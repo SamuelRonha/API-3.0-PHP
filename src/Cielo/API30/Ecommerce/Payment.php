@@ -205,7 +205,7 @@ class Payment implements \JsonSerializable
     /**
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
@@ -1112,18 +1112,18 @@ class Payment implements \JsonSerializable
     }
 
     /**
-    * @return mixed
-    */
+     * @return mixed
+     */
     public function getFraudAnalysis()
     {
         return $this->fraudAnalysis;
     }
 
     /**
-    * @param $fraudAnalysis
-    *
-    * @return $this
-    */
+     * @param $fraudAnalysis
+     *
+     * @return $this
+     */
     public function setFraudAnalysis($fraudAnalysis)
     {
         $this->fraudAnalysis = $fraudAnalysis;

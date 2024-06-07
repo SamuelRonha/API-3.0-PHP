@@ -33,22 +33,22 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * Passenger constructor.
      *
      * @param null
-    */
+     */
     public function __construct()
     {
     }
 
     /**
      * @return array
-    */
-    public function jsonSerialize()
+     */
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
 
     /**
      * @param \stdClass $data
-    */
+     */
     public function populate(\stdClass $data)
     {
         $this->email        = isset($data->Email) ? $data->Email : null;
@@ -61,7 +61,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getEmail()
     {
         return $this->email;
@@ -71,7 +71,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * @param $email
      *
      * @return $this
-    */
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -81,7 +81,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getIdentity()
     {
         return $this->identity;
@@ -91,7 +91,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * @param $identity
      *
      * @return $this
-    */
+     */
     public function setIdentity($identity)
     {
         $this->identity = $identity;
@@ -101,7 +101,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getName()
     {
         return $this->name;
@@ -111,7 +111,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * @param $name
      *
      * @return $this
-    */
+     */
     public function setName($name)
     {
         $this->name = $name;
@@ -121,7 +121,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getRating()
     {
         return $this->rating;
@@ -131,7 +131,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * @param $rating
      *
      * @return $this
-    */
+     */
     public function setRating($rating)
     {
         $this->rating = $rating;
@@ -141,7 +141,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getPhone()
     {
         return $this->phone;
@@ -151,7 +151,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * @param $phone
      *
      * @return $this
-    */
+     */
     public function setPhone($phone)
     {
         $this->phone = $phone;
@@ -161,7 +161,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getStatus()
     {
         return $this->status;
@@ -171,7 +171,7 @@ class Passenger implements \JsonSerializable, CieloSerializable
      * @param $status
      *
      * @return $this
-    */
+     */
     public function setStatus($status)
     {
         $this->status = $status;

@@ -21,22 +21,22 @@ class Legs implements \JsonSerializable, CieloSerializable
      * Legs constructor.
      *
      * @param null
-    */
+     */
     public function __construct()
     {
     }
 
     /**
      * @return array
-    */
-    public function jsonSerialize()
+     */
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
 
     /**
      * @param \stdClass $data
-    */
+     */
     public function populate(\stdClass $data)
     {
         $this->destination  = isset($data->Destination) ? $data->Destination : null;
@@ -45,7 +45,7 @@ class Legs implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getDestination()
     {
         return $this->destination;
@@ -55,7 +55,7 @@ class Legs implements \JsonSerializable, CieloSerializable
      * @param $destination
      *
      * @return $this
-    */
+     */
     public function setDestination($destination)
     {
         $this->destination = $destination;
@@ -65,7 +65,7 @@ class Legs implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getOrigin()
     {
         return $this->origin;
@@ -75,7 +75,7 @@ class Legs implements \JsonSerializable, CieloSerializable
      * @param $origin
      *
      * @return $this
-    */
+     */
     public function setOrigin($origin)
     {
         $this->origin = $origin;

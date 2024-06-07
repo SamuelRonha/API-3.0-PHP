@@ -21,22 +21,22 @@ class MerchantDefinedFields implements \JsonSerializable, CieloSerializable
      * MerchantDefinedFields constructor.
      *
      * @param null
-    */
+     */
     public function __construct()
     {
     }
 
     /**
      * @return array
-    */
-    public function jsonSerialize()
+     */
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
 
     /**
      * @param \stdClass $data
-    */
+     */
     public function populate(\stdClass $data)
     {
         $this->id     = isset($data->Id) ? $data->Id : null;
@@ -45,7 +45,7 @@ class MerchantDefinedFields implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getId()
     {
         return $this->id;
@@ -55,7 +55,7 @@ class MerchantDefinedFields implements \JsonSerializable, CieloSerializable
      * @param $id
      *
      * @return $this
-    */
+     */
     public function setId($id)
     {
         $this->id = $id;
@@ -65,7 +65,7 @@ class MerchantDefinedFields implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getValue()
     {
         return $this->value;
@@ -75,7 +75,7 @@ class MerchantDefinedFields implements \JsonSerializable, CieloSerializable
      * @param $value
      *
      * @return $this
-    */
+     */
     public function setValue($value)
     {
         $this->value = $value;

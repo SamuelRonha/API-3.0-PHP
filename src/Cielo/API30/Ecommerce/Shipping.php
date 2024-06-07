@@ -1,7 +1,9 @@
 <?php
 
 namespace Cielo\API30\Ecommerce;
+
 use Cielo\API30\Ecommerce\CieloSerializable;
+
 /**
  * Class Shipping
  *
@@ -22,22 +24,22 @@ class Shipping implements \JsonSerializable, CieloSerializable
      * Shipping constructor.
      *
      * @param null
-    */
+     */
     public function __construct()
     {
     }
 
     /**
      * @return array
-    */
-    public function jsonSerialize()
+     */
+    public function jsonSerialize(): mixed
     {
         return get_object_vars($this);
     }
 
     /**
      * @param \stdClass $data
-    */
+     */
     public function populate(\stdClass $data)
     {
         $this->addressee  = isset($data->Addressee) ? $data->Addressee : null;
@@ -47,7 +49,7 @@ class Shipping implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getAddressee()
     {
         return $this->addressee;
@@ -57,7 +59,7 @@ class Shipping implements \JsonSerializable, CieloSerializable
      * @param $addressee
      *
      * @return $this
-    */
+     */
     public function setAddressee($addressee)
     {
         $this->addressee = $addressee;
@@ -67,7 +69,7 @@ class Shipping implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getMethod()
     {
         return $this->method;
@@ -77,7 +79,7 @@ class Shipping implements \JsonSerializable, CieloSerializable
      * @param $method
      *
      * @return $this
-    */
+     */
     public function setMethod($method)
     {
         $this->method = $method;
@@ -87,7 +89,7 @@ class Shipping implements \JsonSerializable, CieloSerializable
 
     /**
      * @return mixed
-    */
+     */
     public function getPhone()
     {
         return $this->phone;
@@ -97,7 +99,7 @@ class Shipping implements \JsonSerializable, CieloSerializable
      * @param $phone
      *
      * @return $this
-    */
+     */
     public function setPhone($phone)
     {
         $this->phone = $phone;
