@@ -20,6 +20,12 @@ class Shipping implements \JsonSerializable, CieloSerializable
     /** @var string $phone */
     private $phone;
 
+    /** @var string $identify */
+    private $identify;
+
+    /** @var string $identifyType */
+    private $identifyType;
+
     /**
      * Shipping constructor.
      *
@@ -45,6 +51,8 @@ class Shipping implements \JsonSerializable, CieloSerializable
         $this->addressee  = isset($data->Addressee) ? $data->Addressee : null;
         $this->method     = isset($data->Method) ? $data->Method : null;
         $this->phone      = isset($data->Phone) ? $data->Phone : null;
+        $this->identify     = isset($data->Identify) ? $data->Identify : null;
+        $this->identifyType = isset($data->IdentifyType) ? $data->IdentifyType : null;
     }
 
     /**
@@ -103,6 +111,46 @@ class Shipping implements \JsonSerializable, CieloSerializable
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+    */
+    public function getIdentify()
+    {
+        return $this->identify;
+    }
+
+    /**
+     * @param $identify
+     *
+     * @return $this
+    */
+    public function setIdentify($identify)
+    {
+        $this->identify = $identify;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+    */
+    public function getIdentifyType()
+    {
+        return $this->identifyType;
+    }
+
+    /**
+     * @param $identifyType
+     *
+     * @return $this
+    */
+    public function setIdentifyType($identifyType)
+    {
+        $this->identifyType = $identifyType;
 
         return $this;
     }
